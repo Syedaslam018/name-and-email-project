@@ -17,10 +17,6 @@ let ipname = document.getElementById('name');
 //action event function
 function onSubmit(e){
     e.preventDefault();
-    //adding data to localStroage
-    
-// localStorage.setItem('users', JSON.stringify(myObj));
-// displayData();
 myObj.fname= ipname.value;
 myObj.fmail= ipmail.value
 axios
@@ -36,8 +32,7 @@ axios
 document.myForm.reset();
 }
 
-
-
+//function to display data.
 function displayData(obj){
     let li = document.createElement('li');
 li.innerHTML = obj.fname + ' ' + obj.fmail;
@@ -62,7 +57,6 @@ butt.onclick = function(){
     }).catch( err => {
         console.log(err)    
     })
-    // localStorage.removeItem('users');
 };
 edit.onclick = function(){
     ul.removeChild(li);
@@ -87,4 +81,3 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(err);
     })
 })
-
